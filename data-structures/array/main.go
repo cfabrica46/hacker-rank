@@ -17,10 +17,12 @@ import (
  */
 
 func reverseArray(a []int32) []int32 {
-	var newArr []int32
+	newArr := make([]int32, len(a))
+	copy(newArr, a)
 
-	for i := len(a) - 1; i >= 0; i-- {
-		newArr = append(newArr, a[i])
+	for i := len(newArr)/2 - 1; i >= 0; i-- {
+		opp := len(newArr) - 1 - i
+		newArr[i], newArr[opp] = newArr[opp], newArr[i]
 	}
 
 	return newArr
