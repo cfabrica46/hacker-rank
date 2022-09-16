@@ -22,3 +22,5 @@ Input Format
 
 The first line contains an integer, , the number of integers in .
 The second line contains  space-separated integers that make up .
+
+Link: https://www.hackerrank.com/challenges/arrays-ds/problem?isFullScreen=true
