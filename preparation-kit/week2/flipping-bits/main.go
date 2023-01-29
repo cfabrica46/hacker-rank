@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	n := int64(9)
+	n := int64(802743475)
 
 	result := flippingBits(n)
 
@@ -16,29 +16,17 @@ func main() {
 func flippingBits(n int64) int64 {
 	binary := convertDecimalToBinary(n)
 
-	fmt.Println(binary)
+	binary = completeZeros(binary)
 
-	binaryString := strconv.FormatUint(binary, 10)
+	binary = inverseBinary(binary)
 
-	binaryString = completeZeros(binaryString)
-
-	binaryString = inverseBinary(binaryString)
-
-	return convertBinaryToDecimal(binaryString)
+	return convertBinaryToDecimal(binary)
 }
 
-func convertDecimalToBinary(n int64) uint64 {
-	binary := uint64(0)
-	base := uint64(1)
+func convertDecimalToBinary(decimal int64) string {
+	bin := strconv.FormatInt(decimal, 2)
 
-	for n > 0 {
-		remainder := n % 2
-		binary += uint64(remainder) * base
-		n = n / 2
-		base *= 10
-	}
-
-	return binary
+	return bin
 }
 
 func completeZeros(binaryString string) string {
@@ -77,4 +65,12 @@ func convertBinaryToDecimal(binary string) int64 {
 	}
 
 	return int64(decimal)
+}
+
+func combineStrings(strgs []string) (s string) {
+	for i := range strgs {
+		s += strgs[i]
+	}
+
+	return s
 }
