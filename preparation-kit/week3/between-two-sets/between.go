@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 )
+//test
 
 /* func GetTotalX(a []int32, b []int32) int32 {
 	// Write your code here
